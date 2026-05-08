@@ -22,6 +22,99 @@
 }
 
 @layer components {
+  @keyframes soft-rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-soft {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-28px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pop-card {
+    0% {
+      opacity: 0;
+      transform: translateY(22px) scale(0.98);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1.04);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes badge-pop {
+    0% {
+      opacity: 0;
+      transform: rotate(-2deg) scale(0.92);
+    }
+
+    70% {
+      transform: rotate(-2deg) scale(1.04);
+    }
+
+    100% {
+      opacity: 1;
+      transform: rotate(-2deg) scale(1);
+    }
+  }
+
+  @keyframes gentle-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--float-rotate, 0deg));
+    }
+
+    50% {
+      transform: translateY(-8px) rotate(var(--float-rotate, 0deg));
+    }
+  }
+
+  @keyframes shine-sweep {
+    from {
+      transform: translateX(-130%) skewX(-18deg);
+    }
+
+    to {
+      transform: translateX(170%) skewX(-18deg);
+    }
+  }
+
   .hero-section {
     background:
       linear-gradient(180deg, #fff8ec 0%, #fffef7 100%);
@@ -47,6 +140,7 @@
     object-position: center center;
     position: absolute;
     width: 100%;
+    animation: hero-zoom 1600ms ease-out both;
   }
 
   .hero-content {
@@ -59,6 +153,7 @@
   }
 
   .hero-copy {
+    animation: soft-rise 900ms 180ms ease-out both;
     max-width: 42rem;
     padding-top: clamp(2rem, 6vw, 5rem);
     text-align: left;
@@ -77,6 +172,7 @@
     margin-bottom: 1.15rem;
     padding: 0.72rem 1.35rem;
     transform: rotate(-2deg);
+    animation: badge-pop 680ms 360ms ease-out both;
   }
 
   .hero-title {
@@ -117,6 +213,10 @@
     position: relative;
   }
 
+  .section-heading {
+    animation: soft-rise 720ms ease-out both;
+  }
+
   .section-kicker::after {
     background: #fee68a;
     border-radius: 999px;
@@ -149,6 +249,19 @@
     overflow: hidden;
     position: relative;
     transform: rotate(-1.2deg);
+    transition:
+      box-shadow 220ms ease,
+      transform 220ms ease;
+  }
+
+  .section-pad > div > .photo-frame,
+  .section-pad .grid > .photo-frame {
+    animation: fade-soft 760ms ease-out both;
+  }
+
+  .photo-frame:hover {
+    box-shadow: 6px 8px 0 rgba(47, 59, 63, 0.18);
+    transform: translateY(-4px) rotate(-0.4deg);
   }
 
   .photo-frame img {
@@ -184,10 +297,41 @@
     min-height: 20rem;
     padding: 1.1rem;
     transform: rotate(-1deg);
+    transition:
+      box-shadow 220ms ease,
+      transform 220ms ease;
+  }
+
+  .reveal-stagger:nth-child(1) {
+    animation-delay: 80ms;
+  }
+
+  .reveal-stagger:nth-child(2) {
+    animation-delay: 170ms;
+  }
+
+  .reveal-stagger:nth-child(3) {
+    animation-delay: 260ms;
+  }
+
+  .reveal-stagger:nth-child(4) {
+    animation-delay: 350ms;
+  }
+
+  .reveal-stagger:nth-child(5),
+  .reveal-stagger:nth-child(6),
+  .reveal-stagger:nth-child(7),
+  .reveal-stagger:nth-child(8) {
+    animation-delay: 420ms;
   }
 
   .learn-card:nth-child(even) {
     transform: rotate(1.2deg);
+  }
+
+  .learn-card:hover {
+    box-shadow: 3px 4px 0 rgba(47, 59, 63, 0.18);
+    transform: translateY(-6px) rotate(0deg);
   }
 
   .learn-card img {
@@ -226,6 +370,14 @@
     gap: 1rem;
     grid-template-columns: auto 1fr;
     padding: 1.35rem;
+    transition:
+      box-shadow 220ms ease,
+      transform 220ms ease;
+  }
+
+  .training-item:hover {
+    box-shadow: 3px 4px 0 rgba(47, 59, 63, 0.16);
+    transform: translateY(-4px);
   }
 
   .training-item span {
@@ -259,6 +411,8 @@
     margin-bottom: 1rem;
     padding: 0.45rem 1.55rem;
     transform: rotate(-5deg);
+    --float-rotate: -5deg;
+    animation: gentle-float 4200ms ease-in-out infinite;
   }
 
   .qual-box {
@@ -289,6 +443,8 @@
     margin-top: 1.75rem;
     max-width: 18rem;
     transform: rotate(-3deg);
+    --float-rotate: -3deg;
+    animation: gentle-float 5200ms ease-in-out infinite;
   }
 
   .education-illustration img {
@@ -324,6 +480,11 @@
     display: grid;
     gap: 1rem;
     padding: 1.1rem;
+    transition: transform 220ms ease;
+  }
+
+  .event-card:hover {
+    transform: translateY(-5px);
   }
 
   .event-card .photo-frame {
@@ -354,6 +515,8 @@
     object-fit: cover;
     transform: rotate(3deg);
     width: clamp(4.9rem, 10vw, 7rem);
+    --float-rotate: 3deg;
+    animation: gentle-float 4800ms ease-in-out infinite;
   }
 
   .event-peek span {
@@ -375,15 +538,16 @@
   }
 
   .hospital-link {
-    background: #ffffff;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fffb 100%);
     border: 3px solid #2f3b3f;
     border-radius: 14px;
-    box-shadow: 5px 6px 0 rgba(47, 59, 63, 0.13);
+    box-shadow: 7px 8px 0 rgba(47, 59, 63, 0.14);
     color: #2f3b3f;
     display: block;
     min-height: 15.5rem;
     overflow: hidden;
     padding: 0;
+    position: relative;
     text-decoration: none;
     transition:
       transform 160ms ease,
@@ -391,26 +555,71 @@
       background-color 160ms ease;
   }
 
+  .hospital-link::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    content: '';
+    inset: 0 auto 0 0;
+    pointer-events: none;
+    position: absolute;
+    width: 42%;
+    transform: translateX(-130%) skewX(-18deg);
+  }
+
   .hospital-link:hover {
-    background: #fee68a;
-    box-shadow: 2px 3px 0 rgba(47, 59, 63, 0.18);
-    transform: translate(3px, 3px);
+    background: linear-gradient(180deg, #ffffff 0%, #fff4b8 100%);
+    box-shadow: 3px 4px 0 rgba(47, 59, 63, 0.2);
+    transform: translate(4px, 4px) rotate(-0.4deg);
+  }
+
+  .hospital-link:hover::after {
+    animation: shine-sweep 760ms ease-out;
+  }
+
+  .hospital-thumb {
+    aspect-ratio: 4 / 3;
+    border-bottom: 3px solid #2f3b3f;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hospital-thumb::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 84%, rgba(0, 0, 0, 0.04) 100%);
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
   }
 
   .hospital-link img {
-    aspect-ratio: 4 / 3;
-    border-bottom: 3px solid #2f3b3f;
     display: block;
+    filter: saturate(1.08) contrast(1.08) brightness(1.02);
+    height: 100%;
     object-fit: cover;
+    transition:
+      filter 260ms ease,
+      transform 480ms cubic-bezier(0.2, 0.8, 0.2, 1);
     width: 100%;
   }
 
+  .hospital-link:hover img {
+    filter: saturate(1.16) contrast(1.12) brightness(1.04);
+    transform: scale(1.08);
+  }
+
+  .hospital-body {
+    padding: 1rem 1rem 1.1rem;
+  }
+
   .hospital-link span {
-    color: #418797;
+    background: #e7f7f2;
+    border: 2px solid rgba(47, 59, 63, 0.16);
+    border-radius: 999px;
+    color: #347987;
     display: inline-block;
     font-size: 0.9rem;
     font-weight: 900;
-    margin: 1rem 1rem 0.6rem;
+    margin-bottom: 0.65rem;
+    padding: 0.16rem 0.62rem;
   }
 
   .hospital-link strong {
@@ -418,7 +627,55 @@
     font-size: 1.35rem;
     font-weight: 900;
     line-height: 1.35;
-    padding: 0 1rem 1.1rem;
+  }
+
+  .hospital-link em {
+    align-items: center;
+    color: #f0795c;
+    display: inline-flex;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 900;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+  }
+
+  .hospital-link em::after {
+    content: '→';
+    transition: transform 180ms ease;
+  }
+
+  .hospital-link:hover em::after {
+    transform: translateX(4px);
+  }
+
+  @supports (animation-timeline: view()) {
+    .section-heading,
+    .photo-frame,
+    .learn-card,
+    .training-item,
+    .qual-box,
+    .event-card {
+      animation: fade-soft 720ms ease-out both;
+      animation-range: entry 0% cover 28%;
+      animation-timeline: view();
+    }
+
+    .section-heading {
+      animation-name: soft-rise;
+    }
+
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

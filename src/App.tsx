@@ -20,7 +20,7 @@ function SectionTitle({
   center?: boolean;
 }) {
   return (
-    <div className={center ? 'text-center' : ''}>
+    <div className={center ? 'section-heading text-center' : 'section-heading'}>
       {kicker ? <p className="section-kicker">{kicker}</p> : null}
       <h2 className="section-title">{title}</h2>
     </div>
@@ -99,7 +99,7 @@ function App() {
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {learningCards.map((card, index) => (
-              <article key={card.title} className={`learn-card card-${index}`}>
+              <article key={card.title} className={`learn-card card-${index} reveal-stagger`}>
                 <img src={card.image} alt="" loading="lazy" />
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
@@ -116,7 +116,7 @@ function App() {
             <Photo src={imagePaths.training} alt="新人研修の様子" className="lg:mt-6" />
             <div className="space-y-5">
               {trainingItems.map((item, index) => (
-                <article key={item.title} className="training-item">
+                <article key={item.title} className="training-item reveal-stagger">
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <div>
                     <h3>{item.title}</h3>
@@ -151,7 +151,7 @@ function App() {
                 <h3>豊富な資格取得者</h3>
                 <div className="mt-6 grid gap-4 sm:grid-cols-3">
                   {qualifications.map((item) => (
-                    <article key={item.label}>
+                  <article key={item.label} className="reveal-stagger">
                       <strong>{item.label}</strong>
                       {item.body.map((line) => (
                         <p key={line}>{line}</p>
@@ -175,14 +175,14 @@ function App() {
             </div>
           </div>
           <div className="mt-10 grid gap-7 md:grid-cols-2">
-            <article className="event-card">
+            <article className="event-card reveal-stagger">
               <Photo src={imagePaths.eventPool} alt="プールイベント" />
               <div>
                 <p>POOL-OPEN</p>
                 <h3>遊びも学びも、全力で</h3>
               </div>
             </article>
-            <article className="event-card">
+            <article className="event-card reveal-stagger">
               <Photo src={imagePaths.eventSports} alt="スポーツイベント" />
               <div>
                 <p>AFTER 5</p>
@@ -208,9 +208,14 @@ function App() {
                 rel="noreferrer"
                 className="hospital-link"
               >
-                <img src={hospital.image} alt={`${hospital.name}の外観`} loading="lazy" />
-                <span>{hospital.region}</span>
-                <strong>{hospital.name}</strong>
+                <div className="hospital-thumb">
+                  <img src={hospital.image} alt={`${hospital.name}の外観`} loading="lazy" />
+                </div>
+                <div className="hospital-body">
+                  <span>{hospital.region}</span>
+                  <strong>{hospital.name}</strong>
+                  <em>詳しく見る</em>
+                </div>
               </a>
             ))}
           </div>
