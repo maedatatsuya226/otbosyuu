@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-label="作業療法士の仕事風景の仮画像">
+  <rect width="900" height="680" fill="#eaf7f7"/>
+  <circle cx="720" cy="110" r="150" fill="#fee68a" opacity=".75"/>
+  <path d="M0 530c130-80 250-74 360-26s220 56 330 8 160-72 210-52v220H0z" fill="#bde7d7"/>
+  <rect x="130" y="150" width="640" height="370" rx="36" fill="#fffef7" stroke="#2f3b3f" stroke-width="10"/>
+  <circle cx="340" cy="286" r="64" fill="#f5a48b" stroke="#2f3b3f" stroke-width="8"/>
+  <circle cx="562" cy="286" r="64" fill="#62b6c7" stroke="#2f3b3f" stroke-width="8"/>
+  <path d="M240 465c30-78 86-118 156-118s124 40 154 118" fill="#72b779" stroke="#2f3b3f" stroke-width="8"/>
+  <path d="M466 465c28-74 80-110 146-110s118 36 148 110" fill="#ffffff" stroke="#2f3b3f" stroke-width="8"/>
+  <path d="M184 204c80 22 147 22 202 0M510 204c50 22 106 23 168 2" fill="none" stroke="#62b6c7" stroke-width="12" stroke-linecap="round"/>
+</svg>

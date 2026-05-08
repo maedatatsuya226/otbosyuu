@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-label="研修風景の仮画像">
+  <rect width="900" height="680" fill="#f7fbf5"/>
+  <rect x="104" y="92" width="692" height="468" rx="28" fill="#ffffff" stroke="#2f3b3f" stroke-width="10"/>
+  <rect x="166" y="150" width="560" height="190" rx="18" fill="#bde7d7" stroke="#2f3b3f" stroke-width="7"/>
+  <path d="M226 208h300M226 260h420" stroke="#418797" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="250" cy="440" r="54" fill="#fee68a" stroke="#2f3b3f" stroke-width="8"/>
+  <circle cx="450" cy="440" r="54" fill="#f5a48b" stroke="#2f3b3f" stroke-width="8"/>
+  <circle cx="650" cy="440" r="54" fill="#62b6c7" stroke="#2f3b3f" stroke-width="8"/>
+  <path d="M170 560c26-56 72-88 128-88s102 32 128 88M370 560c26-56 72-88 128-88s102 32 128 88M570 560c26-56 72-88 128-88s102 32 128 88" fill="none" stroke="#2f3b3f" stroke-width="10" stroke-linecap="round"/>
+</svg>

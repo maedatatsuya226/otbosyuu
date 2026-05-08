@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-label="チーム医療の仮画像">
+  <rect width="900" height="680" fill="#fff8ec"/>
+  <path d="M82 118h736v442H82z" fill="#fff" stroke="#2f3b3f" stroke-width="10"/>
+  <circle cx="246" cy="287" r="68" fill="#fee68a" stroke="#2f3b3f" stroke-width="8"/>
+  <circle cx="450" cy="240" r="74" fill="#bde7d7" stroke="#2f3b3f" stroke-width="8"/>
+  <circle cx="654" cy="287" r="68" fill="#f5a48b" stroke="#2f3b3f" stroke-width="8"/>
+  <path d="M144 500c32-76 88-118 160-118s128 42 160 118M348 500c28-88 90-136 172-136s144 48 172 136" fill="none" stroke="#62b6c7" stroke-width="36" stroke-linecap="round"/>
+  <path d="M150 150c88 16 172 12 250-12M506 156c80-20 154-16 224 12" fill="none" stroke="#72b779" stroke-width="12" stroke-linecap="round"/>
+</svg>
