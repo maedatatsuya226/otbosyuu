@@ -38,7 +38,7 @@ function Photo({
 }) {
   return (
     <div className={`photo-frame ${className}`}>
-      <img src={src} alt={alt} loading="lazy" />
+      <img src={src} alt={alt} loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -47,7 +47,13 @@ function App() {
   return (
     <main className="min-h-screen overflow-hidden bg-paper text-ink">
       <section className="hero-section">
-        <img className="hero-bg" src={imagePaths.hero} alt="" />
+        <img
+          className="hero-bg"
+          src={imagePaths.hero}
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="hero-content mx-auto max-w-7xl px-5 py-10 sm:px-8 md:py-16">
           <div className="hero-copy">
             <p className="hero-badge">
@@ -100,7 +106,7 @@ function App() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {learningCards.map((card, index) => (
               <article key={card.title} className={`learn-card card-${index} reveal-stagger`}>
-                <img src={card.image} alt="" loading="lazy" />
+                <img src={card.image} alt="" loading="lazy" decoding="async" />
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
               </article>
@@ -170,7 +176,12 @@ function App() {
           <div className="event-heading">
             <SectionTitle title="楽しいイベントもたくさん！" />
             <div className="event-peek">
-              <img src={imagePaths.eventBbq} alt="バーベキューイベント" loading="lazy" />
+              <img
+                src={imagePaths.eventBbq}
+                alt="バーベキューイベント"
+                loading="lazy"
+                decoding="async"
+              />
               <span>BBQも</span>
             </div>
           </div>
@@ -209,7 +220,12 @@ function App() {
                 className="hospital-link"
               >
                 <div className="hospital-thumb">
-                  <img src={hospital.image} alt={`${hospital.name}の外観`} loading="lazy" />
+                  <img
+                    src={hospital.image}
+                    alt={`${hospital.name}の外観`}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div className="hospital-body">
                   <span>{hospital.region}</span>
